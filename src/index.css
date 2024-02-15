@@ -1,0 +1,54 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-weight: 300;
+}
+
+body{
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: darkcyan;
+  background: #eee;
+  width: 100%;
+  height: 100%;
+}
+
+.container{
+  margin: 10% auto;
+  padding: 80px 0;
+  text-align: center;
+}
+
+.container h1{
+  font-size: 40px;
+}
+
+form {
+  padding: 20px 0;
+  position: relative;
+}
+
+form input{
+  border: 1px solid #000;
+  background-color: rgba(252, 252, 252, 0.5);
+  width: 250px;
+  border-radius: 5px;
+  padding: 10px 15px;
+  margin: 0 auto 10px auto;
+  display: block;
+  text-align: center;
+  font-size: 10px;
+  color: white;
+}
+
+form button{
+  appearance: none;
+  outline: 0;
+  background-color: darkcyan;
+  border: 0;
+  padding: 10px 15px;
+  color: whitesmoke;
+  border-radius: 5px;
+  width: 250px;
+  font-size: 20px;
+}
