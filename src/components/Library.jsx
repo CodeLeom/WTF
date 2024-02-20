@@ -12,11 +12,14 @@ function Library() {
     }
 
     // function to add the user input to the borrowed books array
-    const borrowBooks = () =>{
+    const borrowBooks = (event) =>{
+      
         if(currBook){
             setBooks([...books, currBook])
             setCurrBook('')
         }
+        
+        event.preventDefault()
     }
 
     const handleKeyPress = (e)=> {
@@ -28,14 +31,17 @@ function Library() {
   return (
     <>
       <p>Women Techsters Book Library</p>
-      <input 
+      <form onSubmit={borrowBooks}>
+         <input 
         type="text" 
         value={currBook} 
         onChange={handleInput} 
         onKeyDown={handleKeyPress}
         placeholder='Kindly enter a book name' 
         />
-      <button onClick={borrowBooks}>Borrow Book</button>
+        <button>Borrow Book</button>
+      </form>
+     
       <br /><br />
       <hr />
       <p>Borrowed Books</p>
