@@ -1,12 +1,14 @@
-import Library from "./components/Library"
+// import Library from "./components/Library"
+import SideEffect from "./components/SideEffect"
 
 function App() {
 
 
   return (
     <>
-    <h1>This is a simple State and Hooks lesson</h1>
-      <Library />
+      <h1>This is a simple Side Effect lesson</h1>
+      {/* <Library /> */}
+      <SideEffect />
     </>
   )
 }
