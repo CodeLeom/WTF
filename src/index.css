@@ -1,0 +1,25 @@
+/* header styles */
+
+.header {
+    padding: 25px 0;
+    text-align: center;
+    background: #222;
+  }
+  .header img {
+    width: 100px;
+    height: 30px;
+  }
+
+  /* header styles ends here */
+
+  /* footer styles */
+  .footer {
+    position: absolute;
+    bottom: 0px;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    background-color: #222;
+    color: white;
+  }
+  
