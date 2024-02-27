@@ -1,7 +1,13 @@
-
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
 import Footer from "./components/Layout/Footer"
 import Header from "./components/Layout/Header"
-import Library from "./components/Library"
+import Index from "./components/Pages/Index"
+import About from "./components/Pages/About"
+import Contact from "./components/Pages/Contact"
+import NotFound from "./components/Pages/NotFound"
+import Menu from "./components/Layout/Menu"
+
+
 
 
 function App() {
@@ -10,8 +16,16 @@ function App() {
   return (
     <>
     <Header />
-      <h1>This is a Basic React Router Lesson</h1>
-      <Library />
+      <Router>
+        <Routes>
+          <Route path="/" element={<Menu />}>
+            <Route path="/" element={<Index />}/>
+            <Route path="about" element={<About />}/>
+            <Route path="contact" element={<Contact />}/>
+            <Route path="*" element={<NotFound />}/>
+          </Route>
+        </Routes>
+      </Router>
       
     <Footer msg="WTF © 2024 | Welcome to our React Project" />
 
