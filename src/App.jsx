@@ -4,6 +4,7 @@ import data from "./data/reviewData"
 import ReviewList from "./components/ReviewList"
 import ReviewStats from "./components/ReviewStats"
 import ReviewForm from "./components/ReviewForm"
+import { v4 as uuid } from 'uuid'; 
 
 
 function App() {
@@ -16,13 +17,17 @@ function App() {
     }
   }
 
- 
+//  function to add a review
+const AddReview = (newReview) => {
+  newReview.id=uuid()
+  setReview([newReview, ...review])
+}
 
 
   return (
     <>
       <Header text="Review Application" />
-      <ReviewForm />
+      <ReviewForm handleAdd={AddReview} />
       <div className="container">
         <ReviewStats reviews={review} /> 
         

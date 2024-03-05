@@ -1,5 +1,6 @@
 import { useState } from "react"
 import Button from "./layout/Button"
+import Rating from "./Rating"
 
 const spanStyle = {
   display: 'block',
@@ -7,7 +8,7 @@ const spanStyle = {
   marginTop: '10px'
 }
 
-function ReviewForm() {
+function ReviewForm({handleAdd}) {
     // state for input text 
   const [text, setText] = useState('')
 
@@ -16,6 +17,9 @@ function ReviewForm() {
 
     // state for validation (characters)
     const [msg, setMsg] = useState('')
+
+    // state to handle ratings from users
+    const [rating, setRating] = useState(7)
 
     // function to update the text state (in the input field) and also validate the text characters to be above 20 before button will be enabled
     const textHandler = (e) => {
@@ -33,12 +37,27 @@ function ReviewForm() {
         setText(e.target.value)
     }
 
+// function to submit a review
+const formSubmit = (e) => {
+  e.preventDefault()
+  if(text.trim().length >20){
+    const newReview = {
+      text,
+      rating
+    }
+    handleAdd(newReview)
+    setText('')
+  }
+}
+
   return (
     <>
       <div className="container">
         <div className="card">
-            <form>
+            <form onSubmit={formSubmit}>
                 <h3>Kindly drop a Review for our service you just experienced.</h3>
+                <Rating ratingState={(rating) => setRating(rating)} />
+                <br /><br />
                 <div className="input-group">
                     <input type="text" value={text} placeholder="write your review here" onChange={textHandler} />
                     
