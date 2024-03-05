@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import { useState } from "react"
 import Button from "./layout/Button"
 import Rating from "./Rating"
