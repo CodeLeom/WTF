@@ -1,13 +1,13 @@
 import Button from "../layout/Button"
-import { useRoutes } from "react-router-dom"
+import { useNavigate } from "react-router-dom"
 
 
 
 function Home() {
-    const route = useRoutes()
+    const navigate = useNavigate()
 
     const handleNavigate = () => {
-        route.push('/review')
+        navigate("/review")
     }
 
   return (
