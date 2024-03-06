@@ -1,10 +1,15 @@
 import { useState } from "react"
+import { v4 as uuid } from 'uuid'; 
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Header from "./components/layout/Header"
 import data from "./data/reviewData"
 import ReviewList from "./components/ReviewList"
 import ReviewStats from "./components/ReviewStats"
 import ReviewForm from "./components/ReviewForm"
-import { v4 as uuid } from 'uuid'; 
+import Home from "./components/Pages/Home";
+import Review from "./components/Pages/Review";
+import About from "./components/Pages/About";
+
 
 
 function App() {
@@ -27,12 +32,25 @@ const AddReview = (newReview) => {
   return (
     <>
       <Header text="Review Application" />
-      <ReviewForm handleAdd={AddReview} />
-      <div className="container">
-        <ReviewStats reviews={review} /> 
-        
-        <ReviewList reviews={review} deleteReview={deleteReview} />
-      </div>
+      <Router>
+        <Routes>
+          <Route path="/" element={
+            <>
+              <ReviewForm handleAdd={AddReview} />
+                <div className="container">
+                  <ReviewStats reviews={review} /> 
+                  
+                  <ReviewList reviews={review} deleteReview={deleteReview} />
+                </div>
+            </>
+          }></Route>
+
+          <Route path="/home" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/review" element={<Review />} />
+        </Routes>
+      </Router>
+
     </>
   )
 }
