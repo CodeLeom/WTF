@@ -1,17 +1,20 @@
+import { useContext } from "react"
+import ReviewContext from "../context/ReviewContext"
 import ReviewItem from "./ReviewItem"
 
-function ReviewList({reviews, deleteReview}) {
+function ReviewList() {
+  const {review} = useContext(ReviewContext)
 
-    if(!reviews || reviews.length === 0){
+    if(!review || review.length === 0){
         return <p>No review yet!</p>
       }
         
   return (
     <>
       <div>
-        {reviews.map((item) => (
+        {review.map((item) => (
             <div key={item.id}>
-                <ReviewItem review={item} deleteReview={deleteReview} />
+                <ReviewItem review={item} />
             </div>
         ))}
       </div>

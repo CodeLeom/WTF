@@ -1,6 +1,9 @@
+import { useContext } from "react"
+import ReviewContext from "../context/ReviewContext"
 import { FaTimes } from "react-icons/fa"
 
-function ReviewItem({review, deleteReview}) {
+function ReviewItem({review}) {
+  const {deleteReview} = useContext(ReviewContext)
 
 
 
