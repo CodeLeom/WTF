@@ -1,4 +1,4 @@
-
+/* eslint-disable react/prop-types */
 const header = {
   backgroundColor: '#ff6a95',
   color: '#fff'

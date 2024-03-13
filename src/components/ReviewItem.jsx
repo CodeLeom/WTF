@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import { useContext } from "react"
 import ReviewContext from "../context/ReviewContext"
 import { FaTimes } from "react-icons/fa"

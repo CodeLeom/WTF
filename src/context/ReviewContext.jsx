@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import { createContext, useState } from "react";
 import { v4 as uuid } from 'uuid'; 
 import data from "../data/reviewData"

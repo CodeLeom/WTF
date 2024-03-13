@@ -1,4 +1,4 @@
-
+/* eslint-disable react/prop-types */
 
 
 function Button({children, variant, type, isDisabled, onClick}) {
