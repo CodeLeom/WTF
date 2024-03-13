@@ -16,7 +16,7 @@ function Review() {
                 <ReviewStats /> 
                 <ReviewList />
             </div>
-
+            
             <div className="about-link">
                 <Link to="/">
                     <FaHouseDamage size={40} />

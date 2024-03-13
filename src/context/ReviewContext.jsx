@@ -2,14 +2,16 @@
 import { createContext, useEffect, useState } from "react";
 import { v4 as uuid } from "uuid";
 
+const base_url = import.meta.env.VITE_BASE_URL
 const ReviewContext = createContext();
 
 export const ReviewProvider = ({ children }) => {
   const [review, setReview] = useState([]);
   const [loading, setLoading] = useState(true);
 
+ 
   useEffect(() => {
-    fetch("http://localhost:5000/review")
+    fetch(`${base_url}/review`)
       .then((res) => res.json())
       .then((data) => {
         setTimeout(() => {
