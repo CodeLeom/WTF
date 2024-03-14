@@ -16,8 +16,8 @@
       "text": "lorem ipsum dolor isit issit inim idsum"
     },
     {
-      "rating": 4,
-      "text": "lorem ipsum dolor isit issit another idsum",
+      "text": "Testing mock server add review method",
+      "rating": 8,
       "id": 4
     }
   ]

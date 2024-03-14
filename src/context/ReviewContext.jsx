@@ -1,6 +1,5 @@
 /* eslint-disable react/prop-types */
 import { createContext, useEffect, useState } from "react";
-import { v4 as uuid } from "uuid";
 
 const base_url = import.meta.env.VITE_BASE_URL
 const ReviewContext = createContext();
@@ -24,15 +23,25 @@ export const ReviewProvider = ({ children }) => {
 
 
   //  function to add a review
-  const AddReview = (newReview) => {
-    newReview.id = uuid();
-    setReview([newReview, ...review]);
+  const AddReview = async(newReview) => {
+    const res = await fetch(`${base_url}/review`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(newReview)
+    })
+    const data = await res.json()
+    setReview([data, ...review]);
   };
 
   // function to delete a review
-  const deleteReview = (id) => {
+  const deleteReview = async(id) => {
     if (window.confirm("Are you sure, you want to delete this review?")) {
-      setReview(review.filter((item) => item.id !== id));
+      await fetch(`${base_url}/review/${id}`, {
+        method: 'DELETE'
+      })
+      setReview(review);
     }
   };
 
