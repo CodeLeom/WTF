@@ -1,23 +1,13 @@
 {
   "review": [
     {
-      "rating": 10,
-      "text": "lorem ipsum dolor isit issit another idsum",
-      "id": 1
-    },
-    {
-      "id": 2,
-      "rating": 7,
-      "text": "this is another data from the mock backend"
-    },
-    {
       "id": 3,
       "rating": 9,
       "text": "lorem ipsum dolor isit issit inim idsum"
     },
     {
-      "text": "Testing mock server add review method",
-      "rating": 8,
+      "text": "you are able to type here and submit",
+      "rating": 7,
       "id": 4
     }
   ]
